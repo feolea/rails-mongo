@@ -8,6 +8,7 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+  config.cache_store = :redis_store, "redis://localhost:6379/0/cache_dev", { expires_in: 90.minutes }
 
   # Show full error reports.
   config.consider_all_requests_local = true
