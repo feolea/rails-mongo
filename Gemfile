@@ -25,6 +25,8 @@ gem 'redis-rails', '~> 5.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'mongoid', '~> 7.0'
+gem 'elasticsearch-model', '~> 2.0'
+gem 'elasticsearch-rails', '~> 2.0'
 gem 'bson_ext', '~> 1.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
