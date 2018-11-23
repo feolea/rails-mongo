@@ -27,6 +27,7 @@ gem 'redis-rails', '~> 5.0'
 gem 'mongoid', '~> 7.0'
 gem 'elasticsearch-model', '~> 2.0'
 gem 'elasticsearch-rails', '~> 2.0'
+gem 'logstash-logger', '~> 0.26'
 gem 'bson_ext', '~> 1.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
