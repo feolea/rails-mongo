@@ -10,9 +10,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+# please keep the folders
 !/log/.keep
 !/tmp/.keep
-
+!/tmp/reports/.keep
 
 /node_modules
 /yarn-error.log
