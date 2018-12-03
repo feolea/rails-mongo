@@ -7,7 +7,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true
   config.cache_store = :redis_store, "redis://localhost:6379/0/cache_dev", { expires_in: 90.minutes }
 
   # Show full error reports.
