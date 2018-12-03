@@ -1,18 +1,17 @@
-require 'rails_helper'
 
-RSpec.describe ReportJob do
+RSpec.describe Products::ReportJob do
   context 'when everything is fine' do
     it 'enqueues a ReportJob with params' do
       ActiveJob::Base.queue_adapter = :test
       params = { some: 'param' }
 
-      ReportJob.perform_later(params)
+      described_class.perform_later(params)
 
-      expect(ReportJob).to have_been_enqueued.with(params)
+      expect(described_class).to have_been_enqueued.with(params)
     end
 
     it 'calls open on CSV' do
-      job = ReportJob.new
+      job = described_class.new
       path = Rails.root.join('tmp', 'reports')
       file = "#{path}/products-report#{Time.now.to_i}.csv"
 
@@ -22,7 +21,7 @@ RSpec.describe ReportJob do
     end
 
     it 'returns true' do
-      job = ReportJob.new
+      job = described_class.new
 
       expect(job.perform).to be true
     end
@@ -32,7 +31,7 @@ RSpec.describe ReportJob do
     it 'returns false' do
       allow(CSV).to receive(:open).and_raise('Something went wrong!')
 
-      job = ReportJob.new
+      job = described_class.new
 
       expect(job.perform).to be false
     end
